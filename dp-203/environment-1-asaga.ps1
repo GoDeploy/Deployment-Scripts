@@ -3,6 +3,9 @@ $azUsername = $env:AzUsername;
 $azPassword = $env:AzPassword;
 $azResourceGroupName = $env:AzResourceGroupName;
 
+Install-Module -Force SqlServer
+Import-Module -Force SqlServer
+
 apt-get update
 apt-get -y install git
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
