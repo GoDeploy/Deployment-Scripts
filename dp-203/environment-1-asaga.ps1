@@ -14,7 +14,7 @@ if (Test-Path "./asa") {
     Get-Item "./asa" | Remove-Item -Force -Recurse
 }
 
-git config core.ignorecase false
+git config --global core.ignorecase true
 git clone https://github.com/godeploy/microsoft-data-engineering-ilt-deploy.git asa
 cd asa
 git checkout godeploy
