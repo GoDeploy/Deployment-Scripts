@@ -1,6 +1,7 @@
 $azAdUserId = $env:AzAdUserId;
 $azUsername = $env:AzUsername;
 $azPassword = $env:AzPassword;
+$azResourceGroupName = $env:AzResourceGroupName;
 
 az login -u $azUsername -p $azPassword
 
@@ -15,7 +16,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 git clone https://github.com/godeploy/microsoft-data-engineering-ilt-deploy.git asa
 cd asa/setup/01/automation
 
-./environment-setup.ps1
+./environment-setup.ps1 -resourceGroupName $azResourceGroupName
 
-./lab-02-setup.ps1
+./lab-02-setup.ps1 -resourceGroupName $azResourceGroupName
 
