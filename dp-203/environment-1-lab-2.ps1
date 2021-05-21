@@ -26,7 +26,9 @@ $azSecurePassword = $azPassword | ConvertTo-SecureString -AsPlainText -Force
 $azCredential = new-object -typename System.Management.Automation.PSCredential -argumentlist $azUsername, $azSecurePassword
 Connect-AzAccount -Credential $azCredential
 
+Write-Host "--- Setting up environment in $azResourceGroupName"
 ./environment-setup.ps1 -resourceGroupName $azResourceGroupName
 
+Write-Host "--- Setting up lab 2 in $azResourceGroupName"
 ./lab-02-setup.ps1 -resourceGroupName $azResourceGroupName
 
