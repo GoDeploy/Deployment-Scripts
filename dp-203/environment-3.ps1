@@ -27,5 +27,6 @@ $azCredential = new-object -typename System.Management.Automation.PSCredential -
 Connect-AzAccount -Credential $azCredential
 
 Write-Host "--- Setting up environment in $azResourceGroupName"
-./01-environment-setup.ps1 -resourceGroupName $azResourceGroupName
+./01-environment-setup.ps1 -gdResourceGroupName $azResourceGroupName
 
+#$env:AzUsername = 'Test_StudentF0ZYA@gdcs0.com';$env:AzPassword = 'tA95$aK1?gA75BN';$env:AzAdUserId = '4e80059e-ca99-411c-a3b2-6a16a0833c87';
