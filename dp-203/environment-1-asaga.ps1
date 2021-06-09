@@ -20,7 +20,7 @@ cd asa
 git checkout godeploy
 cd setup/01/automation
 
-az login -u=$azUsername -p=$azPassword
+az login -u $azUsername -p=$azPassword
 
 $azSecurePassword = $azPassword | ConvertTo-SecureString -AsPlainText -Force
 $azCredential = new-object -typename System.Management.Automation.PSCredential -argumentlist $azUsername, $azSecurePassword
