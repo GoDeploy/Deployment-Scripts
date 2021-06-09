@@ -16,7 +16,8 @@ bash -c 'curl -L https://github.com/godeploy/microsoft-data-engineering-ilt-depl
 mv ./microsoft-data-engineering-ilt-deploy-godeploy/ asa
 cd asa/setup/04/artifacts/environment-setup/automation
 
-az login -u $azUsername -p=$azPassword
+$azPasswordParam = "-p=$azPassword"
+az login -u $azUsername $azPasswordParam
 
 $azSecurePassword = $azPassword | ConvertTo-SecureString -AsPlainText -Force
 $azCredential = new-object -typename System.Management.Automation.PSCredential -argumentlist $azUsername, $azSecurePassword
