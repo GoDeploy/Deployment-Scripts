@@ -26,6 +26,13 @@ Connect-AzAccount -Credential $azCredential
 Write-Host "--- Setting up environment in $azResourceGroupName"
 ./environment-setup.ps1 -resourceGroupName $azResourceGroupName
 
+az logout
+Disconnect-AzAccount
+Clear-AzContext -Force
+
+az login -u $azUsername $azPasswordParam
+Connect-AzAccount -Credential $azCredential
+
 Write-Host "--- Setting up lab 2 in $azResourceGroupName"
 ./lab-02-setup.ps1 -resourceGroupName $azResourceGroupName
 
